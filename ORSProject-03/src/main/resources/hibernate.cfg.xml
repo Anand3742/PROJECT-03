@@ -71,16 +71,16 @@
 			resource="in/co/rays/project_3/hbm/HospitalDTO.hbm.xml" />
 		<mapping
 			resource="in/co/rays/project_3/hbm/VehicleDTO.hbm.xml" />
-		<mapping 
-		    resource="in/co/rays/project_3/hbm/EventDTO.hbm.xml" />
+		<mapping resource="in/co/rays/project_3/hbm/EventDTO.hbm.xml" />
 		<mapping
 			resource="in/co/rays/project_3/hbm/DonationDTO.hbm.xml" />
 		<mapping
 			resource="in/co/rays/project_3/hbm/WarrantyDTO.hbm.xml" />
-		<mapping
-			resource="in/co/rays/project_3/hbm/SalaryDTO.hbm.xml" />
+		<mapping resource="in/co/rays/project_3/hbm/SalaryDTO.hbm.xml" />
 		<mapping
 			resource="in/co/rays/project_3/hbm/PortfolioDTO.hbm.xml" />
+
+		<mapping resource="in/co/rays/project_3/hbm/SecretDTO.hbm.xml" />
 
 
 

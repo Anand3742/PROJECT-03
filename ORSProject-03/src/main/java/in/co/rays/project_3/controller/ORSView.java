@@ -157,4 +157,12 @@ public interface ORSView {
 	public String PORTFOLIO_LIST_VIEW = PAGE_FOLDER + "/PortfolioListView.jsp";
 	public String PORTFOLIO_CTL = APP_CONTEXT + "/ctl/PortfolioCtl";
 	public String PORTFOLIO_LIST_CTL = APP_CONTEXT + "/ctl/PortfolioListCtl";
+	
+	
+	public String SECRET_VIEW = PAGE_FOLDER + "/SecretView.jsp";
+	public String SECRET_LIST_VIEW = PAGE_FOLDER + "/SecretListView.jsp";
+	public String SECRET_CTL = APP_CONTEXT + "/ctl/SecretCtl";
+	public String SECRET_LIST_CTL = APP_CONTEXT + "/ctl/SecretListCtl";
+	
+	
 }

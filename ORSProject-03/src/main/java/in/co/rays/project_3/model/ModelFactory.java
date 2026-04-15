@@ -448,4 +448,25 @@ public final class ModelFactory {
 
 		return portfolioModel;
 	}
+	
+	
+	public SecretModelInt getSecretModel() {
+
+		SecretModelInt secretModel = (SecretModelInt) modelCache.get("secretModel");
+
+		if (secretModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				secretModel = new SecretModelHibImpl();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				secretModel = new SecretModelHibImpl(); 
+			}
+
+			modelCache.put("secretModel", secretModel);
+		}
+
+		return secretModel;
+	}
 }

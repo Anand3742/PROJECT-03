@@ -26,8 +26,7 @@
 
 <style>
 .aj {
-		background-image: linear-gradient(to bottom right, grey, black);
-
+	background-image: linear-gradient(to bottom right, grey, black);
 }
 
 .student-nav-fix .navbar-nav {
@@ -210,7 +209,21 @@
 							class="fa fa-sort-amount-down"></i>Subject List</a>
 					</div></li>
 
-		<%-- 		<li class="nav-item dropdown"><a
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Secret</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.SECRET_CTL%>"> <i
+							class="fa fa-key"></i> Add Secret
+						</a> <a class="dropdown-item" href="<%=ORSView.SECRET_LIST_CTL%>">
+							<i class="fa fa-list"></i> Secret List
+						</a>
+
+					</div></li>
+
+				<%-- 		<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
 					style="color: white;">Product</a>
 					<div class="dropdown-menu">
@@ -228,7 +241,8 @@
 							class="dropdown-item" href="<%=ORSView.PROFILE_LIST_CTL%>"><i
 							class="fa fa-list mr-2"></i>Profile List</a>
 					</div></li>
- --%>				<%--<li class="nav-item dropdown px-1"><a
+ --%>
+				<%--<li class="nav-item dropdown px-1"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Inventory </a>
 					<div class="dropdown-menu">
@@ -333,7 +347,8 @@
 						</a>
 
 					</div></li>
- --%>				<%-- <li class="nav-item dropdown px-1"><a
+ --%>
+				<%-- <li class="nav-item dropdown px-1"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Donation </a>
 
@@ -359,23 +374,19 @@
 						</a>
 
 					</div></li> --%>
-					<li class="nav-item dropdown px-1">
-	<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-		Portfolio
-	</a>
+				<li class="nav-item dropdown px-1"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+						Portfolio </a>
 
-	<div class="dropdown-menu">
+					<div class="dropdown-menu">
 
-		<a class="dropdown-item" href="<%=ORSView.PORTFOLIO_CTL%>">
-			<i class="fa fa-plus mr-2"></i>Add Portfolio
-		</a>
+						<a class="dropdown-item" href="<%=ORSView.PORTFOLIO_CTL%>"> <i
+							class="fa fa-plus mr-2"></i>Add Portfolio
+						</a> <a class="dropdown-item" href="<%=ORSView.PORTFOLIO_LIST_CTL%>">
+							<i class="fa fa-list mr-2"></i>Portfolio List
+						</a>
 
-		<a class="dropdown-item" href="<%=ORSView.PORTFOLIO_LIST_CTL%>">
-			<i class="fa fa-list mr-2"></i>Portfolio List
-		</a>
-
-	</div>
-</li>
+					</div></li>
 				<%-- <li class="nav-item dropdown px-1"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Warranty </a>
