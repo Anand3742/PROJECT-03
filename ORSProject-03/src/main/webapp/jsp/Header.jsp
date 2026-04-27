@@ -223,6 +223,20 @@
 
 					</div></li>
 
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Customer</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.CUSTOMER_CTL%>"> <i
+							class="fa fa-user"></i> Add Customer
+						</a> <a class="dropdown-item" href="<%=ORSView.CUSTOMER_LIST_CTL%>">
+							<i class="fa fa-list"></i> Customer List
+						</a>
+
+					</div></li>
+
 				<%-- 		<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
 					style="color: white;">Product</a>

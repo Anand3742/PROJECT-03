@@ -84,12 +84,7 @@ public class DonationCtl extends BaseCtl {
                 DonationDTO dto = model.findByPK(id);
                 ServletUtility.setDto(dto, req);
 
-            } catch (DatabaseException e) {
-                e.printStackTrace();
-                ServletUtility.handleExceptionDBDown(e, req, resp, getView());
-                return;
-
-            } catch (ApplicationException e) {
+            }  catch (ApplicationException e) {
                 e.printStackTrace();
                 ServletUtility.handleException(e, req, resp);
                 return;
@@ -119,12 +114,7 @@ public class DonationCtl extends BaseCtl {
                 ServletUtility.setDto(bean, req);
                 ServletUtility.setErrorMessage("Donor Name Already Exist !!!", req);
 
-            } catch (DatabaseException de) {
-                de.printStackTrace();
-                ServletUtility.handleExceptionDBDown(de, req, resp, getView());
-                return;
-
-            } catch (ApplicationException ae) {
+            }  catch (ApplicationException ae) {
                 ae.printStackTrace();
                 ServletUtility.handleException(ae, req, resp);
                 return;

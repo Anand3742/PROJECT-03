@@ -60,9 +60,9 @@ public class PortfolioListCtl extends BaseCtl {
 			request.setAttribute("pageNo", pageNo);
 			request.setAttribute("pageSize", pageSize);
 
-		} catch (DatabaseException e) {
-			e.printStackTrace();
-			ServletUtility.handleExceptionDBDown(e, request, response, getView());
+		} catch (ApplicationException e) {
+			
+			ServletUtility.handleException(e, request, response);
 			return;
 		}
 

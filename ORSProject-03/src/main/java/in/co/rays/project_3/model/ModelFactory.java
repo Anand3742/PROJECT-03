@@ -469,4 +469,25 @@ public final class ModelFactory {
 
 		return secretModel;
 	}
+	
+
+	public CustomerModelInt getCustomerModel() {
+
+	    CustomerModelInt customerModel = (CustomerModelInt) modelCache.get("customerModel");
+
+	    if (customerModel == null) {
+
+	        if ("Hibernate".equals(DATABASE)) {
+	            customerModel = new CustomerModelHibImpl();
+	        }
+
+	        if ("JDBC".equals(DATABASE)) {
+	            customerModel = new CustomerModelHibImpl(); 
+	        }
+
+	        modelCache.put("customerModel", customerModel);
+	    }
+
+	    return customerModel;
+	}
 }

@@ -58,12 +58,12 @@ public class SecretListCtl extends BaseCtl {
 			request.setAttribute("pageNo", pageNo);
 			request.setAttribute("pageSize", pageSize);
 
-		} catch (DatabaseException e) {
-			e.printStackTrace();
-			ServletUtility.handleExceptionDBDown(e, request, response, getView());
+		} catch (ApplicationException e) {
+			
+			ServletUtility.handleException(e, request, response);
 			return;
-
 		}
+		
 
 		ServletUtility.forward(getView(), request, response);
 	}
@@ -118,12 +118,7 @@ public class SecretListCtl extends BaseCtl {
 					try {
 						model.delete(deleteDto);
 
-					} catch (DatabaseException e) {
-						e.printStackTrace();
-						ServletUtility.handleExceptionDBDown(e, request, response, getView());
-						return;
-
-					} catch (ApplicationException e) {
+					}  catch (ApplicationException e) {
 						e.printStackTrace();
 						ServletUtility.handleException(e, request, response);
 						return;
@@ -164,12 +159,7 @@ public class SecretListCtl extends BaseCtl {
 
 			ServletUtility.forward(getView(), request, response);
 
-		} catch (DatabaseException e) {
-			e.printStackTrace();
-			ServletUtility.handleExceptionDBDown(e, request, response, getView());
-			return;
-
-		} catch (ApplicationException e) {
+		}  catch (ApplicationException e) {
 			e.printStackTrace();
 			ServletUtility.handleException(e, request, response);
 		}

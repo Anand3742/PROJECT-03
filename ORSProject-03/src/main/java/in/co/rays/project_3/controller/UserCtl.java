@@ -205,12 +205,7 @@ public class UserCtl extends BaseCtl {
 					try {
 						model.add(dto);
 						ServletUtility.setSuccessMessage("Data is successfully saved", request);
-					}catch (DatabaseException de) {
-		                de.printStackTrace();
-		                ServletUtility.handleExceptionDBDown(de, request, response, getView());
-		                return;
-
-		            } 
+					}
 					catch (ApplicationException e) {
 						log.error(e);
 						ServletUtility.handleException(e, request, response);

@@ -58,11 +58,16 @@ public class ServletUtility {
      * @throws IOException
      * @throws ServletException
      */
-    public static void handleException(Exception e, HttpServletRequest request,
-            HttpServletResponse response) throws IOException, ServletException {
-        request.setAttribute("exception", e);
-        response.sendRedirect(ORSView.ERROR_CTL);
-    }
+    
+    
+    public static void handleException(Exception e, HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		
+		request.setAttribute("javax.servlet.error.exception", e);
+		RequestDispatcher rd = request.getRequestDispatcher(ORSView.ERROR_CTL);
+		rd.forward(request, response);
+
+	}
 
     /**
      * Gets error message from request
@@ -249,18 +254,5 @@ public class ServletUtility {
         return pageSize;
      }
     
-    public static void handleExceptionDBDown(Exception e, HttpServletRequest request,
-            HttpServletResponse response,String view) throws IOException, ServletException {
-    	
-    	
-    	  request.setAttribute(BaseCtl.MSG_ERROR, "Database connection was lost. Please try again.");
-    	  ServletUtility.setList(new ArrayList(), request);
-          ServletUtility.setDto(null, request);
-          ServletUtility.setPageNo(1, request);
-          ServletUtility.setPageSize(5, request);
-          request.setAttribute("nextListSize", 0);
-    	  HibDataSource.rebuildSessionFactory();
-        forward(view, request, response);
-    }
-   
+  
 }

@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/main/java/in/co/rays/project_3/controller/SecretCtl.java=UTF-8
 encoding//src/main/java/in/co/rays/project_3/controller/SecretListCtl.java=UTF-8
+encoding//src/main/webapp/jsp/CustomerListView.jsp=UTF-8
+encoding//src/main/webapp/jsp/CustomerView.jsp=UTF-8
 encoding//src/main/webapp/jsp/Header.jsp=UTF-8
 encoding//src/main/webapp/jsp/SecretListView.jsp=UTF-8
 encoding//src/main/webapp/jsp/SecretView.jsp=UTF-8

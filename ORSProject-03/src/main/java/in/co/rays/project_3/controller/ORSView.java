@@ -164,5 +164,10 @@ public interface ORSView {
 	public String SECRET_CTL = APP_CONTEXT + "/ctl/SecretCtl";
 	public String SECRET_LIST_CTL = APP_CONTEXT + "/ctl/SecretListCtl";
 	
+	public String CUSTOMER_VIEW = PAGE_FOLDER + "/CustomerView.jsp";
+	public String CUSTOMER_LIST_VIEW = PAGE_FOLDER + "/CustomerListView.jsp";
+	public String CUSTOMER_CTL = APP_CONTEXT + "/ctl/CustomerCtl";
+	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/ctl/CustomerListCtl";
+	
 	
 }

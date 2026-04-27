@@ -95,12 +95,7 @@ public class LoginCtl extends BaseCtl {
 			try {
 				dto = model.findByPK(id);
 				ServletUtility.setDto(dto, request);
-			}catch (DatabaseException de) {
-                de.printStackTrace();
-                ServletUtility.handleExceptionDBDown(de, request, response, getView());
-                return;
-
-            }catch (ApplicationException e) {
+			}catch (ApplicationException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				ServletUtility.handleException(e, request, response);
@@ -155,12 +150,7 @@ public class LoginCtl extends BaseCtl {
 					ServletUtility.setErrorMessage("Invalid LoginId And Password!", request);
 				}
 
-			}catch (DatabaseException de) {
-                de.printStackTrace();
-                ServletUtility.handleExceptionDBDown(de, request, response, getView());
-                return;
-
-            } catch (ApplicationException e) {
+			} catch (ApplicationException e) {
 				log.error(e);
 				ServletUtility.handleException(e, request, response);
 				return;
