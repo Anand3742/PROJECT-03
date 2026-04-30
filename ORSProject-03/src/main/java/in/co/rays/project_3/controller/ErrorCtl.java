@@ -165,8 +165,16 @@ public class ErrorCtl extends BaseCtl {
 		if (ctl.endsWith(ORSView.CUSTOMER_CTL))
 
 			return ORSView.CUSTOMER_VIEW;
+		
+		if (ctl.endsWith(ORSView.LISTENER_CTL))
+
+			return ORSView.LISTENER_VIEW;
 
 		// ===== LIST PAGES =====
+		
+		if (ctl.endsWith(ORSView.LISTENER_LIST_CTL))
+
+			return ORSView.LISTENER_LIST_VIEW;
 
 		if (ctl.endsWith(ORSView.SECRET_LIST_CTL))
 
