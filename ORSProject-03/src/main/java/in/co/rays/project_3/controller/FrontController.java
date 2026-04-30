@@ -16,7 +16,8 @@ import javax.servlet.http.HttpSession;
 import in.co.rays.project_3.util.ServletUtility;
 
 /**
- * Front Functionality ctl. to perform session checking and logging operation
+ * Front Functionality ctl. to perform session checking and logging operation 
+ * It prevent any user to access application without login 
  * @author Anand Choudhary
  *
  */
@@ -48,8 +49,3 @@ public class FrontController implements Filter {
 	}
 
 }
-
-
-
-
-

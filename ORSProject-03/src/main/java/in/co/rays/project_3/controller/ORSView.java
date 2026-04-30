@@ -169,5 +169,9 @@ public interface ORSView {
 	public String CUSTOMER_CTL = APP_CONTEXT + "/ctl/CustomerCtl";
 	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/ctl/CustomerListCtl";
 	
+	public String LISTENER_VIEW = PAGE_FOLDER + "/ListenerView.jsp";
+	public String LISTENER_LIST_VIEW = PAGE_FOLDER + "/ListenerListView.jsp";
+	public String LISTENER_CTL = APP_CONTEXT + "/ctl/ListenerCtl";
+	public String LISTENER_LIST_CTL = APP_CONTEXT + "/ctl/ListenerListCtl";
 	
 }

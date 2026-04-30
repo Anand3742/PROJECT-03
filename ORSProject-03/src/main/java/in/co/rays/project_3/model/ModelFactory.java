@@ -490,4 +490,24 @@ public final class ModelFactory {
 
 	    return customerModel;
 	}
+	
+	public ListenerModelInt getListenerModel() {
+
+	    ListenerModelInt listenerModel = (ListenerModelInt) modelCache.get("listenerModel");
+
+	    if (listenerModel == null) {
+
+	        if ("Hibernate".equals(DATABASE)) {
+	            listenerModel = new ListenerModelHibImpl();
+	        }
+
+	        if ("JDBC".equals(DATABASE)) {
+	            listenerModel = new ListenerModelHibImpl(); // (ya JDBC impl agar ho)
+	        }
+
+	        modelCache.put("listenerModel", listenerModel);
+	    }
+
+	    return listenerModel;
+	}
 }

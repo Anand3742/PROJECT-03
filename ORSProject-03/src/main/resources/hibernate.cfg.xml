@@ -83,6 +83,8 @@
 		<mapping resource="in/co/rays/project_3/hbm/SecretDTO.hbm.xml" />
 		
 		<mapping resource="in/co/rays/project_3/hbm/CustomerDTO.hbm.xml" />
+		
+		<mapping resource="in/co/rays/project_3/hbm/ListenerDTO.hbm.xml" />
 
 
 

@@ -4,6 +4,7 @@
 <%@page import="in.co.rays.project_3.util.DataUtility"%>
 <%@page import="in.co.rays.project_3.util.ServletUtility"%>
 <%@page import="in.co.rays.project_3.controller.ORSView"%>
+<%@ page import="java.util.List"%>
 
 <html>
 <head>
@@ -48,6 +49,9 @@
 							}
 						%>
 
+
+						
+
 						<!-- ✅ SUCCESS MESSAGE -->
 						<%
 							if (!ServletUtility.getSuccessMessage(request).equals("")) {
@@ -73,35 +77,30 @@
 						<input type="hidden" name="id" value="<%=dto.getId()%>">
 
 						<!-- Client Name -->
-						<b>Client Name *</b> 
-						<input type="text" name="clientName"
+						<b>Client Name *</b> <input type="text" name="clientName"
 							class="form-control" placeholder="Enter Client Name"
 							value="<%=DataUtility.getStringData(dto.getClientName())%>">
 
-						<font color="red"> 
-							<%=ServletUtility.getErrorMessage("clientName", request)%>
+						<font color="red"> <%=ServletUtility.getErrorMessage("clientName", request)%>
 						</font> <br>
 
 						<!-- Location -->
-						<b>Location *</b> 
-						<input type="text" name="location"
+						<b>Location *</b> <input type="text" name="location"
 							class="form-control" placeholder="Enter Location"
 							value="<%=DataUtility.getStringData(dto.getLocation())%>">
 
-						<font color="red"> 
-							<%=ServletUtility.getErrorMessage("location", request)%>
+						<font color="red"> <%=ServletUtility.getErrorMessage("location", request)%>
 						</font> <br>
 
 						<!-- Contact Number -->
-						<b>Contact Number *</b> 
-						<input type="text" name="contactNumber"
+						<b>Contact Number *</b> <input type="text" name="contactNumber"
 							class="form-control" placeholder="Enter Contact Number"
 							value="<%=DataUtility.getStringData(dto.getContactNumber())%>">
 
-						<font color="red"> 
-							<%=ServletUtility.getErrorMessage("contactNumber", request)%>
+						<font color="red"> <%=ServletUtility.getErrorMessage("contactNumber", request)%>
 						</font> <br>
 
+						<!-- Importance -->
 						<!-- Importance -->
 						<b>Importance *</b>
 
@@ -111,8 +110,7 @@
 
 						<%=HTMLUtility.getList("importance", dto.getImportance(), map)%>
 
-						<font color="red"> 
-							<%=ServletUtility.getErrorMessage("importance", request)%>
+						<font color="red"> <%=ServletUtility.getErrorMessage("importance", request)%>
 						</font> <br>
 
 						<div class="text-center">
@@ -122,9 +120,7 @@
 							%>
 
 							<input type="submit" name="operation" class="btn btn-success"
-								value="<%=CustomerCtl.OP_UPDATE%>"> 
-
-							<input type="submit"
+								value="<%=CustomerCtl.OP_UPDATE%>"> <input type="submit"
 								name="operation" class="btn btn-warning"
 								value="<%=CustomerCtl.OP_CANCEL%>">
 
@@ -133,9 +129,7 @@
 							%>
 
 							<input type="submit" name="operation" class="btn btn-success"
-								value="<%=CustomerCtl.OP_SAVE%>"> 
-
-							<input type="submit"
+								value="<%=CustomerCtl.OP_SAVE%>"> <input type="submit"
 								name="operation" class="btn btn-warning"
 								value="<%=CustomerCtl.OP_RESET%>">
 

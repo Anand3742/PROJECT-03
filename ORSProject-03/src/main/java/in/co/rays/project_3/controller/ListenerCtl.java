@@ -2,7 +2,6 @@ package in.co.rays.project_3.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -11,29 +10,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import in.co.rays.project_3.dto.BaseDTO;
-import in.co.rays.project_3.dto.CustomerDTO;
+import in.co.rays.project_3.dto.ListenerDTO;
 import in.co.rays.project_3.exception.ApplicationException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
-import in.co.rays.project_3.model.CustomerModelInt;
+import in.co.rays.project_3.model.ListenerModelInt;
 import in.co.rays.project_3.model.ModelFactory;
 import in.co.rays.project_3.util.DataUtility;
 import in.co.rays.project_3.util.DataValidator;
 import in.co.rays.project_3.util.PropertyReader;
 import in.co.rays.project_3.util.ServletUtility;
 
-@WebServlet(name = "CustomerCtl", urlPatterns = "/ctl/CustomerCtl")
-public class CustomerCtl extends BaseCtl {
+@WebServlet(name = "ListenerCtl", urlPatterns = "/ctl/ListenerCtl")
+public class ListenerCtl extends BaseCtl {
 
-	  @Override
-	    protected void preload(HttpServletRequest request) {
+  
+    @Override
+    protected void preload(HttpServletRequest request) {
 
-	        Map<String, String> map = new HashMap<>();
-	        map.put("High", "High");
-	        map.put("Medium", "Medium");
-	        map.put("Low", "Low");
+        Map<String, String> map = new HashMap<>();
+        map.put("ACTIVE", "ACTIVE");
+        map.put("INACTIVE", "INACTIVE");
 
-	        request.setAttribute("importanceList", map);
-	    }
+        request.setAttribute("statusList", map);
+    }
 
     @Override
     protected boolean validate(HttpServletRequest request) {
@@ -45,27 +44,27 @@ public class CustomerCtl extends BaseCtl {
             return pass;
         }
 
-        if (DataValidator.isNull(request.getParameter("clientName"))) {
-            request.setAttribute("clientName",
-                    PropertyReader.getValue("error.require", "Client Name"));
+        if (DataValidator.isNull(request.getParameter("listenerCode"))) {
+            request.setAttribute("listenerCode",
+                    PropertyReader.getValue("error.require", "Listener Code"));
             pass = false;
         }
 
-        if (DataValidator.isNull(request.getParameter("location"))) {
-            request.setAttribute("location",
-                    PropertyReader.getValue("error.require", "Location"));
+        if (DataValidator.isNull(request.getParameter("queueName"))) {
+            request.setAttribute("queueName",
+                    PropertyReader.getValue("error.require", "Queue Name"));
             pass = false;
         }
 
-        if (DataValidator.isNull(request.getParameter("contactNumber"))) {
-            request.setAttribute("contactNumber",
-                    PropertyReader.getValue("error.require", "Contact Number"));
+        if (DataValidator.isNull(request.getParameter("consumerGroup"))) {
+            request.setAttribute("consumerGroup",
+                    PropertyReader.getValue("error.require", "Consumer Group"));
             pass = false;
         }
 
-        if (DataValidator.isNull(request.getParameter("importance"))) {
-            request.setAttribute("importance",
-                    PropertyReader.getValue("error.require", "Importance"));
+        if (DataValidator.isNull(request.getParameter("status"))) {
+            request.setAttribute("status",
+                    PropertyReader.getValue("error.require", "Status"));
             pass = false;
         }
 
@@ -75,13 +74,13 @@ public class CustomerCtl extends BaseCtl {
     @Override
     protected BaseDTO populateDTO(HttpServletRequest request) {
 
-        CustomerDTO dto = new CustomerDTO();
+        ListenerDTO dto = new ListenerDTO();
 
         dto.setId(DataUtility.getLong(request.getParameter("id")));
-        dto.setClientName(DataUtility.getString(request.getParameter("clientName")));
-        dto.setLocation(DataUtility.getString(request.getParameter("location")));
-        dto.setContactNumber(DataUtility.getString(request.getParameter("contactNumber")));
-        dto.setImportance(DataUtility.getString(request.getParameter("importance")));
+        dto.setListenerCode(DataUtility.getString(request.getParameter("listenerCode")));
+        dto.setQueueName(DataUtility.getString(request.getParameter("queueName")));
+        dto.setConsumerGroup(DataUtility.getString(request.getParameter("consumerGroup")));
+        dto.setStatus(DataUtility.getString(request.getParameter("status")));
 
         populateBean(dto, request);
 
@@ -93,11 +92,11 @@ public class CustomerCtl extends BaseCtl {
             throws ServletException, IOException {
 
         Long id = DataUtility.getLong(req.getParameter("id"));
-        CustomerModelInt model = ModelFactory.getInstance().getCustomerModel();
+        ListenerModelInt model = ModelFactory.getInstance().getListenerModel();
 
         if (id > 0) {
             try {
-                CustomerDTO dto = model.findByPK(id);
+                ListenerDTO dto = model.findByPK(id);
                 ServletUtility.setDto(dto, req);
 
             } catch (ApplicationException e) {
@@ -115,22 +114,22 @@ public class CustomerCtl extends BaseCtl {
             throws ServletException, IOException {
 
         String op = DataUtility.getString(req.getParameter("operation"));
-        CustomerModelInt model = ModelFactory.getInstance().getCustomerModel();
+        ListenerModelInt model = ModelFactory.getInstance().getListenerModel();
 
         if (OP_SAVE.equalsIgnoreCase(op)) {
 
-            CustomerDTO dto = (CustomerDTO) populateDTO(req);
+            ListenerDTO dto = (ListenerDTO) populateDTO(req);
 
             try {
                 model.add(dto);
 
                 ServletUtility.setDto(dto, req);
-                ServletUtility.setSuccessMessage("Customer Added Successfully !!!", req);
+                ServletUtility.setSuccessMessage("Listener Added Successfully !!!", req);
 
             } catch (DuplicateRecordException dre) {
 
                 ServletUtility.setDto(dto, req);
-                ServletUtility.setErrorMessage("Customer Already Exist !!!", req);
+                ServletUtility.setErrorMessage("Listener Code Already Exist !!!", req);
 
             } catch (ApplicationException ae) {
 
@@ -141,18 +140,18 @@ public class CustomerCtl extends BaseCtl {
 
         } else if (OP_UPDATE.equalsIgnoreCase(op)) {
 
-            CustomerDTO dto = (CustomerDTO) populateDTO(req);
+            ListenerDTO dto = (ListenerDTO) populateDTO(req);
 
             try {
                 model.update(dto);
 
                 ServletUtility.setDto(dto, req);
-                ServletUtility.setSuccessMessage("Customer Updated Successfully !!!", req);
+                ServletUtility.setSuccessMessage("Listener Updated Successfully !!!", req);
 
             } catch (DuplicateRecordException dre) {
 
                 ServletUtility.setDto(dto, req);
-                ServletUtility.setErrorMessage("Customer Already Exist !!!", req);
+                ServletUtility.setErrorMessage("Listener Code Already Exist !!!", req);
 
             } catch (ApplicationException ae) {
 
@@ -163,12 +162,12 @@ public class CustomerCtl extends BaseCtl {
 
         } else if (OP_RESET.equalsIgnoreCase(op)) {
 
-            ServletUtility.redirect(ORSView.CUSTOMER_CTL, req, resp);
+            ServletUtility.redirect(ORSView.LISTENER_CTL, req, resp);
             return;
 
         } else if (OP_CANCEL.equalsIgnoreCase(op)) {
 
-            ServletUtility.redirect(ORSView.CUSTOMER_LIST_CTL, req, resp);
+            ServletUtility.redirect(ORSView.LISTENER_LIST_CTL, req, resp);
             return;
         }
 
@@ -177,6 +176,6 @@ public class CustomerCtl extends BaseCtl {
 
     @Override
     protected String getView() {
-        return ORSView.CUSTOMER_VIEW;
+        return ORSView.LISTENER_VIEW;
     }
 }

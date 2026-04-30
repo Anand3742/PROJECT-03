@@ -388,19 +388,7 @@
 						</a>
 
 					</div></li> --%>
-				<li class="nav-item dropdown px-1"><a
-					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-						Portfolio </a>
 
-					<div class="dropdown-menu">
-
-						<a class="dropdown-item" href="<%=ORSView.PORTFOLIO_CTL%>"> <i
-							class="fa fa-plus mr-2"></i>Add Portfolio
-						</a> <a class="dropdown-item" href="<%=ORSView.PORTFOLIO_LIST_CTL%>">
-							<i class="fa fa-list mr-2"></i>Portfolio List
-						</a>
-
-					</div></li>
 				<%-- <li class="nav-item dropdown px-1"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Warranty </a>
@@ -414,6 +402,20 @@
 						</a>
 
 					</div></li> --%>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Listener</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.LISTENER_CTL%>"> <i
+							class="fa fa-user"></i> Add Listener
+						</a> <a class="dropdown-item" href="<%=ORSView.LISTENER_LIST_CTL%>">
+							<i class="fa fa-list"></i> Listener List
+						</a>
+
+					</div></li>
 
 				<%
 					}
