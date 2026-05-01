@@ -7,7 +7,7 @@
 <%@ page import="java.util.List"%>
 
 <html>
-<head>
+<head> 
 <title>Customer View</title>
 
 <style>
