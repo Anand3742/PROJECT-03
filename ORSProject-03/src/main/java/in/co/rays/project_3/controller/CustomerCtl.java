@@ -59,7 +59,7 @@ public class CustomerCtl extends BaseCtl {
 
         if (DataValidator.isNull(request.getParameter("contactNumber"))) {
             request.setAttribute("contactNumber",
-                    PropertyReader.getValue("error.require", "Contact Number"));
+                    PropertyReader.getValue("error.require", "Contact Number")); 
             pass = false;
         }
 
