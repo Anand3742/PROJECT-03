@@ -29,7 +29,7 @@ public class CollegeListCtl extends BaseCtl {
 	private static Logger log = Logger.getLogger(CollegeListCtl.class);
      
 	protected void preload(HttpServletRequest request){
-		CollegeModelInt model=ModelFactory.getInstance().getCollegeModel();
+		CollegeModelInt model=ModelFactory.getInstance().getCollegeModel(); 
 		try {
 			List list=model.list();
 			request.setAttribute("collegeList", list);
