@@ -9,7 +9,7 @@
 <%@page import="in.co.rays.project_3.controller.ORSView"%>
 
 <html>
-<head>
+<head> 
 <title>Customer List</title>
 
 <script src="<%=ORSView.APP_CONTEXT%>/js/jquery.min.js"></script>
