@@ -324,7 +324,7 @@ public final class ModelFactory {
 			}
 
 			if ("JDBC".equals(DATABASE)) {
-				hospitalModel = new HospitalModelHibImp(); // change if JDBC impl created
+				hospitalModel = new HospitalModelHibImp(); 
 			}
 
 			modelCache.put("hospitalModel", hospitalModel);
@@ -502,7 +502,7 @@ public final class ModelFactory {
 	        }
 
 	        if ("JDBC".equals(DATABASE)) {
-	            listenerModel = new ListenerModelHibImpl(); // (ya JDBC impl agar ho)
+	            listenerModel = new ListenerModelHibImpl(); 
 	        }
 
 	        modelCache.put("listenerModel", listenerModel);

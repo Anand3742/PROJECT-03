@@ -11,7 +11,7 @@ services:
     networks:
       - mynetwork
     volumes:
-      - mysql_data:/var/lib/mysql   # ✅ FIXED
+      - mysql_data:/var/lib/mysql  
 
   webapp:
     build:
@@ -31,4 +31,4 @@ networks:
     driver: bridge
 
 volumes:
-  mysql_data:   # ✅ NEW (named volume)
+  mysql_data:  

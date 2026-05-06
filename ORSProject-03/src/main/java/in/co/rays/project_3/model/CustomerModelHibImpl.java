@@ -16,7 +16,7 @@ import in.co.rays.project_3.util.HibDataSource;
 
 public class CustomerModelHibImpl implements CustomerModelInt {
 
-    private static Logger log = Logger.getLogger(CustomerModelHibImpl.class.getName());
+   
 
     @Override
     public long add(CustomerDTO dto) throws DatabaseException, DuplicateRecordException {
